@@ -2,14 +2,11 @@ var HighScoreW = document.querySelector("#high-scoreW");
 var btnWEL = document.querySelector("#buttonW");
 //load score , sorts them, then display :)
 var loadScores = () => {
-
     var savedS = localStorage.getItem("High-scores");
-    
     if (!savedS){
         console.log ("No Scores Yet!");
         return false;
     }
-
     savedS = JSON.parse(savedS);
     
     savedS.sort(function(a, b) {return a.score - b.score});
@@ -20,7 +17,6 @@ var loadScores = () => {
     for (var i = savedS.length-1; i > 0; i--) {
         var scoreLi = document.createElement("li");
         scoreLi.className = "score-li";
-        console.log("attempting to display array index " + savedS[i]);
         scoreLi.innerHTML = savedS[i].initials + " - " + savedS[i].score;
         scoreLOL.appendChild(scoreLi);
     }
