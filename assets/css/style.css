@@ -129,12 +129,12 @@ main {
 /* feedback END */
 
 /* highscores page */
-#scores-title {
+#high-scores-title {
     font-size: 48px;
     text-align: center;
 }
 
-#score-wrapper {
+#high-scoreW {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -146,21 +146,21 @@ main {
 
 }
 
-#score-ol {
+#high-score-ol {
     padding: 0;
     width: 50%;
     background: lightgray;
     list-style-position: inside;
 }
 
-.score-li {
+.high-score-li {
     font-size: 20px;
-    background: lightgray;
     padding: 10px 10px;
+    background: lightgray;
 }
 
 
-#button-wrapper {
+#buttonW {
     display: flex;
     justify-content: center;
     width: 100%;
