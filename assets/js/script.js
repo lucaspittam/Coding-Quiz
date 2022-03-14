@@ -3,26 +3,26 @@ var questionI = 0;
 var scoreT = 60; 
 var timeI = 0; 
 var mainEl = document.querySelector("#main");
-var questionWEl = document.querySelector("#question-wrapper");
-var headerWEl = document.querySelector("#header-wrapper");
+var questionWEl = document.querySelector("#questionW");
+var headerWEl = document.querySelector("#headerW");
 
 
 // array for questions
 var questionArray = [
     {
-        text: "What parts of an HTML file can have JavaScript scripts added to them?",
-        choice1: "The <body> section",
-        choice2: "The <head> section",
-        choice3: "Both the <head> and <body> sections are acceptable",
-        choice4: "The <meta> section",
+        text: "Commonly used data types do NOT include:",
+        choice1: "Strings",
+        choice2: "Booleans",
+        choice3: "Alerts",
+        choice4: "Numbers",
         answer: "3"
     },
     {
-        text: "What is the correct way to declare an array in JavaScript?",
-        choice1: 'var colors = "red", "green", "blue"',
-        choice2: 'var colors = ["red", "green", "blue"]',
-        choice3: 'var colors = (1:"red", 2:"green", 3:"blue")',
-        choice4: 'var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")',
+        text: "The condition in an if/else statement is enclosed in:",
+        choice1: "Quotes",
+        choice2: "Parenthesis",
+        choice3: "Curly Brackets",
+        choice4: "Square Brackets",
         answer: "2"
     },
     {
@@ -34,71 +34,59 @@ var questionArray = [
         answer: "2"
     },
     {
-        text: 'How do you write "Hello World" in an alert box?',
-        choice1: 'alert("Hello World");',
-        choice2: 'msgBox("Hello World");',
-        choice3: 'msg("Hello World");',
-        choice4: 'alertBox("Hello World");',
-        answer: "1"
+        text:  "Arrays in JavaScript can be used to store:",
+        choice1: "Numbers and Strings",
+        choice2: "Other Arrays",
+        choice3: "Booleans",
+        choice4: "All of the above",
+        answer: "4"
     },
     {
-        text: "What operator is the AND operator?",
+        text: "What operator is the Increment operator?",
         choice1: "+",
         choice2: "&",
-        choice3: "&&",
+        choice3: "++",
         choice4: "||",
         answer: "3"
     },
     {
-        text: "What type of event occurs when an HTML element is clicked on?",
-        choice1: "onchange",
-        choice2: "onmouseclick",
-        choice3: "onmouseover",
-        choice4: "onclick",
+        text: "String values must be enclosed within ______ when being assigned to variables",
+        choice1: "Commas",
+        choice2: "Curly Brackets",
+        choice3: "Quotes",
+        choice4: "Parenthesis",
+        answer: "3"
+    },
+    {
+        text: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choice1: "JavaScript",
+        choice2: "Terminal Bash",
+        choice3: "for loops",
+        choice4: "console.log",
         answer: "4"
     },
     {
-        text: "What operator is the OR operator?",
-        choice1: "+",
-        choice2: "&",
-        choice3: "&&",
-        choice4: "||",
-        answer: "4"
-    },
-    {
-        text: 'How do you call a function named "myFunction"?',
-        choice1: "call function myFunction()",
-        choice2: "myFunction()",
-        choice3: "call myFunction()",
-        choice4: "call.myFunction()",
+        text: "Where is the correct place to insert a JavaScript?",
+        choice1: "The <head> section",
+        choice2: "Both the <head> section and the <body> section are correct",
+        choice3: "The <body> section",
+        choice4: " Only the <footer> section",
         answer: "2"
     },
     {
-        text: "What operator is used to assign a value to a vairable?",
-        choice1: "=",
-        choice2: "===",
-        choice3: "#",
-        choice4: "<<",
-        answer: "1"
+        text: "JavaScript is the same as Java.",
+        choice1: "True",
+        choice2: "False",
+        answer: "2"
     },
     {
-        text: "How do you write a comment in JavaScript?",
-        choice1: "'This is a comment",
-        choice2: "<!-- This is a comment -->",
-        choice3: "rem This is a comment",
-        choice4: "//This is a comment",
-        answer: "4"
+        text: "JavaScript File Has An Extension of:",
+        choice1: ".Java",
+        choice2: ".Js",
+        choice3: ".javascript",
+        choice4: ".XML",
+        answer: "2"
     },
-    {
-        //duplicate last question to correct for the quiz advancing past the final question due to the way the nextQfunction advances.
-        //there is likely a better way to structure the logic in that function so this is not necessary
-        text: "How do you write a comment in JavaScript?",
-        choice1: "'This is a comment",
-        choice2: "<!-- This is a comment -->",
-        choice3: "rem This is a comment",
-        choice4: "//This is a comment",
-        answer: "4"
-    }
 ];
 
 var highscoreLEl = document.createElement("a");
