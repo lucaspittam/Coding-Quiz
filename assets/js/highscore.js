@@ -1,4 +1,4 @@
-var HighScoreW = document.querySelector("#high-scoreW");
+var highScoreW = document.querySelector("#high-scoreW");
 var btnWEL = document.querySelector("#buttonW");
 //load score , sorts them, then display :)
 var loadScores = () => {
@@ -12,7 +12,7 @@ var loadScores = () => {
     savedS.sort(function(a, b) {return a.score - b.score});
     var scoreLOL = document.createElement("ol");
     scoreLOL.id = "score-ol";
-    HighScoreW.appendChild(scoreLOL);
+    highScoreW.appendChild(scoreLOL);
 
     for (var i = savedS.length-1; i > 0; i--) {
         var scoreLi = document.createElement("li");
@@ -28,7 +28,7 @@ if (ScoreLoad === false){
     var emptySEl = document.createElement("h2");
     emptySEl.id = "empty-score-msg";
     emptySEl.textContent = "No Scores Yet!";
-    HighScoreW.appendChild(emptySEl);
+    highScoreW.appendChild(emptySEl);
 }
 //scores button
 var clearBEl = document.createElement("button");

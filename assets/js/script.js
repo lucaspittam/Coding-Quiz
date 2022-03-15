@@ -88,10 +88,10 @@ var questionArray = [
         answer: "2"
     },
 ];
-
+// high score button
 var highscoreLEl = document.createElement("a");
-highscoreLEl.href = "./scores.html";
-highscoreLEl.innerHTML = "View High Scores";
+highscoreLEl.href = "./highscore.html";
+highscoreLEl.innerHTML = "View High-Scores";
 headerWEl.appendChild(highscoreLEl);
 
 var timerEl = document.createElement("p");
