@@ -12,7 +12,7 @@
 }
 header a {
     text-decoration: none;
-    color: purple;
+    color: rgb(10, 58, 20);
     font-size: 20px;
     display: inline;
     font-weight: bold;
@@ -56,7 +56,7 @@ main {
     border: none;
     font-size: 20px;
     padding: 10px 30px;
-    background: rgb(83, 21, 125);
+    background: rgb(10, 58, 20);
     color: white;
     border-radius: 12px;
     display: block;
@@ -65,7 +65,7 @@ main {
 }
 
 .btn:hover {
-    background: rgb(191, 29, 209);
+    background: rgb(34, 175, 65);
 }
 /* Button END */
 
@@ -108,7 +108,7 @@ main {
 .choice {
     font-size: 20px;
     padding: 10px 30px;
-    background: rgb(83, 21, 125);
+    background: rgb(10, 58, 20);
     color: white;
     border-radius: 12px;
     display: block;
@@ -117,7 +117,7 @@ main {
 }
 
 .choice:hover {
-    background: rgb(191, 29, 209);
+    background: rgb(43, 143, 65);
 }
 /* OL END */
 
@@ -147,16 +147,17 @@ main {
 }
 
 #high-score-ol {
-    padding: 0;
     width: 50%;
+    padding: 0; 
     background: lightgray;
     list-style-position: inside;
 }
 
 .high-score-li {
     font-size: 20px;
-    padding: 10px 10px;
     background: lightgray;
+    padding: 10px 10px;
+    
 }
 
 

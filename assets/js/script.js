@@ -95,17 +95,17 @@ highscoreLEl.innerHTML = "View High-Scores";
 headerWEl.appendChild(highscoreLEl);
 
 var timerEl = document.createElement("p");
-timerEl.textContent = "Time: " + scoreT;
+timerEl.textContent = "Time Remaining: " + scoreT;
 headerWEl.appendChild(timerEl);
 
 //create title. 
 var questionTEl = document.createElement("h2");
-questionTEl.textContent = "Coding Quiz Challenge";
+questionTEl.textContent = "Coding Quiz !!";
 questionWEl.appendChild(questionTEl);
 
 //create  instructions
 var instrucEl = document.createElement("p");
-instrucEl.innerHTML = "Try to answer the following code-related questions within the time limit.<br> Keep in mind that incorrect answers will penalize your score/time by 10 seconds."
+instrucEl.innerHTML = "Answer the following questions within the time limit.<br> All wrong answers will deduct your score by 10 points (10 secs)."
 instrucEl.id = "instructions";
 questionWEl.appendChild(instrucEl);
 
@@ -117,7 +117,7 @@ sBWEl.id = "startBtn-wrapper";
 var sBEl = document.createElement("button");
 sBEl.className = "btn";
 sBEl.id = "startBtn";
-sBEl.innerHTML = "Start Quiz";
+sBEl.innerHTML = "Start";
 sBWEl.appendChild(sBEl);
 questionWEl.appendChild(sBWEl);
 
@@ -256,7 +256,7 @@ var qDone = () => {
     initialTextEl.name = "initials";
     inputWrapperEl.appendChild(initialTextEl);
 
-    var initialBtnEl = document.createElement("buton");
+    var initialBtnEl = document.createElement("button");
     initialBtnEl.className = "btn";
     initialBtnEl.id = "initials-button";
     initialBtnEl.textContent = "Submit";
@@ -277,8 +277,8 @@ var sendI = function (event) {
     }
     savedScores = JSON.parse(savedScores);
     savedScores.push(newScore);
-    localStorage.setItem("scores", JSON.stringify(savedScores));
-    window.location.href = "./scores.html";
+    localStorage.setItem("highscore", JSON.stringify(savedScores));
+    window.location.href = "./highscore.html";
 }
 
 //this function clears the correct or wrong feedback that is displayed when the user selects an answer

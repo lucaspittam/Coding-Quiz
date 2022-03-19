@@ -2,7 +2,7 @@ var highScoreW = document.querySelector("#high-scoreW");
 var btnWEL = document.querySelector("#buttonW");
 //load score , sorts them, then display :)
 var loadScores = () => {
-    var savedS = localStorage.getItem("High-scores");
+    var savedS = localStorage.getItem("Highscore");
     if (!savedS){
         console.log ("No Scores Yet!");
         return false;
