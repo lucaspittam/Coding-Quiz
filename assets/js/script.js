@@ -74,11 +74,22 @@ var questionArray = [
         answer: "2"
     },
     {
-        text: "JavaScript is the same as Java.",
-        choice1: "True",
-        choice2: "False",
+        text: "What is negative Infinity?",
+        choice1: "A scripting language",
+        choice2: "Negative Infinity is a number in JavaScript which can be derived by dividing negative number by zero",
+        choice3: "the software company that developed JavaScript.",
+        choice4: "it dosnt mean anything in Javascript",
         answer: "2"
     },
+    {
+        text: "JavaScript File Has An Extension of:",
+        choice1: ".Java",
+        choice2: ".Js",
+        choice3: ".javascript",
+        choice4: ".XML",
+        answer: "2"
+    },
+    // last question is getting skipped???
     {
         text: "JavaScript File Has An Extension of:",
         choice1: ".Java",
@@ -100,16 +111,16 @@ headerWEl.appendChild(timerEl);
 
 //create title. 
 var questionTEl = document.createElement("h2");
-questionTEl.textContent = "Coding Quiz !!";
+questionTEl.textContent = "Coding Quiz!!";
 questionWEl.appendChild(questionTEl);
 
 //create  instructions
 var instrucEl = document.createElement("p");
-instrucEl.innerHTML = "Answer the following questions within the time limit.<br> All wrong answers will deduct your score by 10 points (10 secs)."
+instrucEl.innerHTML = "Answer the following questions within the time limit. <br> All wrong answers will deduct your score by 10 points (10 secs)."
 instrucEl.id = "instructions";
 questionWEl.appendChild(instrucEl);
 
-//the button wrapper is needed to get the style the start button correctly
+//the button wrapper is needed to style the start button
 var sBWEl = document.createElement("div");
 sBWEl.id = "startBtn-wrapper";
 
@@ -182,7 +193,7 @@ var nextQ= (event) => {
         }
         else {
             scoreT = Math.max(0, scoreT-10);
-            feedbackMsgEl.textContent = "Wrong";
+            feedbackMsgEl.textContent = "Incorrect";
         }
     }
 
@@ -215,7 +226,7 @@ var Sdown = () => {
             qDone();
         }
         
-        //the other condition for ending the quiz is if all of the questions have been answered
+        //the condition for ending the quiz if all the questions have been answered
         if (questionI+1 === questionArray.length){
             qDone();
         }
@@ -270,19 +281,18 @@ var sendI = function (event) {
     var initials = document.querySelector("#initials").value;
     var newScore = {initials: initials, score: scoreT};
     
-    var savedScores = localStorage.getItem("scores");
-    if (!savedScores){
-        savedScores = [{initials: "", score: ""}];
-        savedScores = JSON.stringify(savedScores);
+    var savedS = localStorage.getItem("highscore");
+    if (!savedS){
+        savedS = [{initials: "", score: ""}];
+        savedS = JSON.stringify(savedS);
     }
-    savedScores = JSON.parse(savedScores);
-    savedScores.push(newScore);
-    localStorage.setItem("highscore", JSON.stringify(savedScores));
+    savedS = JSON.parse(savedS);
+    savedS.push(newScore);
+    localStorage.setItem("highscore", JSON.stringify(savedS));
     window.location.href = "./highscore.html";
 }
 
-//this function clears the correct or wrong feedback that is displayed when the user selects an answer
-//this function is called when the cursor moves over one of the next question's answer choices
+// clears the correct or wrong feedback when the user picks answer
 var clearF = (event) => {
     var targetEl = event.target;
     var answer = targetEl.getAttribute("choice-number");
