@@ -237,7 +237,7 @@ var qDone = () => {
     
     clearInterval(timeI);
 
-    //clears away the unnecessary information to prepare for the initials form being displayed
+    //clears unnecessary information to prepare for the initials form being displayed
     var feedbackMsgEl = document.querySelector("#feedback-message");
     feedbackMsgEl.textContent = "";
 
@@ -275,7 +275,7 @@ var qDone = () => {
     initialFormEl.appendChild(initialBtnEl);   
 }
 
-//this function is called by the event listeners when either the submit buton is clicked, or when the initals are entered and the enter/return key is pressed
+//this function is called by the event listeners when either submit button is clicked, or when initals are entered
 var sendI = function (event) {
     event.preventDefault();
     var initials = document.querySelector("#initials").value;
@@ -292,12 +292,11 @@ var sendI = function (event) {
     window.location.href = "./highscore.html";
 }
 
-// clears the correct or wrong feedback when the user picks answer
+// clears the correct or incorrect feedback when the user picks answer
 var clearF = (event) => {
     var targetEl = event.target;
     var answer = targetEl.getAttribute("choice-number");
-    //if answer exists, i.e. if there is a correct or wrong feedback message currently displayed, replace the text with "" to effectively
-    //remove the string
+    //if answer exists, i.e. if there is a correct or incorrect feedback message  displayed, replace the text with "" 
     if (answer) {
         var feedbackMsgEl = document.querySelector("#feedback-message");
         feedbackMsgEl.textContent = "";
